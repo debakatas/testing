@@ -22,16 +22,16 @@ export const canSomeoneDrink = (arr) => {};
 export const characterFilter = () => {};
 
 // some;
-export const isIsogra = (str) => {};
+export const isIsogram = (str) => {};
 
 // rduce
-export const oddAndEe = (arr) => {};
+export const oddAndEven = (arr) => {};
 
 // fill
-export const countShe = (num) => {};
+export const countSheep = (num) => {};
 
 // redce
-export const scoreAvrag = (arr) => {};
+export const scoreAverage = (arr) => {};
 
 // reduce + forEach
 export const moreCommonWord = (str, backList) => {};
@@ -47,4 +47,4 @@ export const palindro = (str) => {};
 export const cesarCodex = (st, shift) => {};
 
 // Matrix
-export const matrixLtter = (leter, num) => {};
+export const matrixLetter = (leter, num) => {};

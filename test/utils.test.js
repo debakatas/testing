@@ -9,8 +9,9 @@ import {
     maxItems,
     moreCommonWord,
     oddAndEven,
-    palindrome,
+    palindro,
     scoreAverage,
+    countSheep,
 } from '../src/utils';
 
 test('canAllDrink', () => {
