@@ -48,3 +48,15 @@ export const cesarCodex = (st, shift) => {};
 
 // Matrix
 export const matrixLetter = (leter, num) => {};
+
+export function sum(val1, val2) {
+    return Number(val1) + Number(val2);
+}
+
+// crear una funcion (utils.js)
+// toma cualquier array de objetos
+// crea un texto "name" de "year"
+// ["Primer de 2004", "Triangle de 2009"]
+
+// crear test (utils.test.js)
+// Usen como prueba la informacion en "data.js"
