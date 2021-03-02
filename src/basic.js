@@ -36,18 +36,22 @@ let personas = [
     {
         edad: 10,
         nombre: 'Juan',
+        country: 'ES',
     },
     {
         edad: 20,
         nombre: 'Pedro',
+        country: 'US',
     },
     {
         edad: 30,
         nombre: 'Maria',
+        country: 'CO',
     },
     {
         edad: 40,
         nombre: 'Timotina',
+        country: 'US',
     },
 ];
 
@@ -59,10 +63,37 @@ let arraycitoNuevo = arraycito.map(function(elemento, index, array) {
     };
 });
 
+// 1:1
+
 let nombresPersonas = [];
 personas.forEach(function(elemento) {
     nombresPersonas.push(elemento.nombre);
 });
 
 // map 1:1
-console.log(nombresPersonas);
+
+const numeros = [1, 23, 34, 2, 3, 5];
+
+// Soy el mejor!
+let numerosDoble = numeros.map(function(elemento) {
+    return elemento * 2;
+});
+
+let numerosDOble2 = [];
+numeros.forEach(function(element) {
+    numerosDoble.push(element * 2);
+});
+
+// Se detiene cuando es True o se acaba los elementos
+// find Devuelve un solo elemento
+// findIndex Devuelve un numero (el indice)
+let encontrado = arraycitoNuevo.findIndex(function(elemento, index, array) {
+    return elemento.nombre.length > 4;
+});
+
+// Devuelve un array
+let todos = arraycitoNuevo.filter(function(elemento) {
+    return elemento.nombre.length > 4;
+});
+
+console.log(todos);

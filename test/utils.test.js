@@ -14,7 +14,7 @@
 //     countSheep,
 // } from '../src/utils';
 
-import { sum } from '../src/utils';
+import { findPerson, findPersonInCountry, sum } from '../src/utils';
 
 // Test Suites (it | test)
 describe('sum', function() {
@@ -48,3 +48,87 @@ describe('formateadorPeliculs', function() {
 // describe;
 
 // expect;
+describe('findPerson', function() {
+    test('encuentra una persona mayor de edad', function() {
+        expect(
+            findPerson([
+                { edad: 13, name: 'Cata' },
+                { edad: 18, name: 'Maho' },
+            ]).name
+        ).toBe('Maho');
+
+        expect(
+            findPerson([
+                { edad: 11, name: 'Lia' },
+                { edad: 12, name: 'Terum' },
+                { edad: 31, name: 'Kai' },
+            ]).name
+        ).toBe('Kai');
+    });
+
+    test('no encuentra una persona mayor de edad', function() {
+        expect(
+            findPerson([
+                { edad: 13, name: 'Cata' },
+                { edad: 11, name: 'Maho' },
+            ])
+        ).toBeUndefined();
+
+        expect(
+            findPerson([
+                { edad: 11, name: 'Lia' },
+                { edad: 12, name: 'Terum' },
+                { edad: 17, name: 'Kai' },
+            ])
+        ).toBeUndefined();
+
+        expect(findPerson([])).toBeUndefined();
+    });
+});
+
+describe('findPersonInCountry', function() {
+    test('encuentra una persona mayor de edad por pais', function() {
+        expect(
+            findPersonInCountry([
+                { edad: 13, name: 'Cata', country: 'CA' },
+                { edad: 18, name: 'Maho', country: 'US' },
+                { edad: 18, name: 'Aang', country: 'CO' },
+            ]).name
+        ).toBe('Aang');
+
+        expect(
+            findPersonInCountry([
+                { edad: 11, name: 'Lia', country: 'US' },
+                { edad: 12, name: 'Terum', country: 'US' },
+                { edad: 31, name: 'Kai', country: 'US' },
+            ]).name
+        ).toBe('Kai');
+
+        expect(
+            findPersonInCountry([
+                { edad: 11, name: 'Lia', country: 'US' },
+                { edad: 18, name: 'Terum', country: 'US' },
+                { edad: 21, name: 'Katara', country: 'US' },
+            ]).name
+        ).toBe('Katara');
+    });
+
+    test('no encuentra una persona mayor de edad por pais', function() {
+        expect(
+            findPersonInCountry([
+                { edad: 13, name: 'Cata', country: 'CO' },
+                { edad: 19, name: 'Maho', country: 'US' },
+            ])
+        ).toBeUndefined();
+
+        expect(
+            findPersonInCountry([
+                { edad: 17, name: 'Lia', country: 'CO' },
+                { edad: 20, name: 'Terum', country: 'US' },
+                { edad: 18, name: 'Kai', country: 'US' },
+            ])
+        ).toBeUndefined();
+
+        expect(findPersonInCountry([])).toBeUndefined();
+    });
+});
